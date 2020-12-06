@@ -64,9 +64,11 @@ public enum Vegetables {
         return this.weight;
     }
 
-    public  double getTotalCalories(){
-        return calories*weight/100.0;
+    public double getTotalCalories() {
+        return calories * weight / 100.0;
     }
 
-    public Vegetables[] showListCompositions() {return Vegetables.values();}
+    public Vegetables[] showListCompositions() {
+        return Vegetables.values();
+    }
 }

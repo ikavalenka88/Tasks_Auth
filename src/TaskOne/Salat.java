@@ -40,7 +40,7 @@ public class Salat {
             return;
         }
         System.out.println("The Salat " + name + "compositions:");
-        for (Vegetables vegetables :compositions) {
+        for (Vegetables vegetables : compositions) {
             System.out.println(vegetables.toString());
         }
         System.out.println("Total: " + countCalories());
@@ -68,7 +68,7 @@ public class Salat {
         for (Vegetables vegetables : compositions) {
             calories = vegetables.getCalories();
             if (calories >= lowerCalories && calories <= upperCalories) {
-                System.out.println(vegetables.name()+ ", " + vegetables.getCalories() + "on 100g");
+                System.out.println(vegetables.name() + ", " + vegetables.getCalories() + "on 100g");
             }
         }
     }

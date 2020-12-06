@@ -2,11 +2,13 @@ package TaskTwo;
 
 public class SolidOfRevolution extends Shape {
     public double radius;
-    public SolidOfRevolution(double volume, double radius){
+
+    public SolidOfRevolution(double volume, double radius) {
         super(volume);
-        this.radius=radius;
+        this.radius = radius;
     }
-    public double getRadius(){
+
+    public double getRadius() {
         return radius;
     }
 }
