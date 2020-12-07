@@ -91,7 +91,7 @@ public class Cheff {
             }
             switch (choice) {
                 case 1:
-//                    salat.addCompositions();
+//                    salat.addCompositions(); // I NEED HELP !!! I'm can nor see resolve way.
                 case 2:
                     salat.sortComponentsByCalories();
                     break;

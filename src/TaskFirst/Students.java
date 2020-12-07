@@ -1,6 +1,4 @@
-package TaskThreeCollections;
-
-import java.util.HashMap;
+package TaskFirst;
 
 public class Students implements Comparable<Students> {
     int id;
@@ -18,7 +16,7 @@ public class Students implements Comparable<Students> {
     public String toString() {
         final StringBuffer st = new StringBuffer("Student: ");
         st.append("id: ").append(id);
-        st.append("name: ").append(name);
+        st.append(" name: ").append(name);
         st.append("surname: ").append(surname);
         st.append("age: ").append(age);
         st.append(".");

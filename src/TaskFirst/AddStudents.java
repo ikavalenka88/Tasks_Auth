@@ -1,7 +1,6 @@
-package TaskThreeCollections;
+package TaskFirst;
 
 import java.util.ArrayList;
-import java.util.TreeSet;
 
 public class AddStudents {
     public static void main(String[] args) {
@@ -38,5 +37,6 @@ public class AddStudents {
         for (Students s:studendsClass){
             System.out.println(s);
         }
+
     }
 }
