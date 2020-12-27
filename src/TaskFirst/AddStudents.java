@@ -1,6 +1,7 @@
 package TaskFirst;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 
 public class AddStudents {
@@ -38,7 +39,6 @@ public class AddStudents {
         for (Students s:studendsClass){
             System.out.println(s);
         }
-        int count = Collections.frequency(studendsClass,"Wow");
-
+        System.out.println(studendsClass.contains("Balaw ")+"");
     }
 }

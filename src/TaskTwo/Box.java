@@ -11,7 +11,7 @@ public class Box extends Shape {
         this.enabled = enabled;
     }
 
-    private boolean add(Shape shape) {
+    public boolean add(Shape shape) {
         if (enabled >= shape.getVolume()) {
             shapes.add(shape);
             this.enabled = enabled - shape.getVolume();
