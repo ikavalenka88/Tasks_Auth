@@ -39,6 +39,9 @@ public class AddStudents {
         for (Students s:studendsClass){
             System.out.println(s);
         }
-        System.out.println(studendsClass.contains("Balaw ")+"");
+        studendsClass.removeIf(Students ->(Students.surname == "Wow" )); //test
+        System.out.println("Sorted by Surname" + studendsClass.toString());
+
+
     }
 }
