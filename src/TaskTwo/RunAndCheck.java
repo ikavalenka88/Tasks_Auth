@@ -1,5 +1,10 @@
 package TaskTwo;
 
+import TaskTwo.dto.Ball;
+import TaskTwo.dto.Box;
+import TaskTwo.dto.Cylinder;
+import TaskTwo.dto.Pyramid;
+
 public class RunAndCheck {
     public static void main(String[] args) {
         Ball FB = new Ball(5.4);

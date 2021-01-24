@@ -1,4 +1,4 @@
-package TaskTwo;
+package TaskTwo.dto;
 
 public class Cylinder extends SolidOfRevolution {
     public double height;

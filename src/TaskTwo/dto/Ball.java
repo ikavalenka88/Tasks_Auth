@@ -1,4 +1,4 @@
-package TaskTwo;
+package TaskTwo.dto;
 
 public class Ball extends SolidOfRevolution {
     public Ball(double rad) {

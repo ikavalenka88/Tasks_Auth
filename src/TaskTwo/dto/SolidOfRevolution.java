@@ -1,4 +1,6 @@
-package TaskTwo;
+package TaskTwo.dto;
+
+import TaskTwo.Shape;
 
 public class SolidOfRevolution extends Shape {
     public double radius;
