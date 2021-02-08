@@ -8,6 +8,7 @@ public class Vegetables {
     public Vegetables(String name) {
         this.name = name;
     }
+
     public Vegetables(String name, double calories) {
         if (calories < 0) {
             throw new IllegalArgumentException("Cannot create vegetable with "

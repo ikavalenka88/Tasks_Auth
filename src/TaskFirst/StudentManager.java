@@ -1,24 +1,31 @@
 package TaskFirst;
 
+import javax.swing.*;
 import java.security.Key;
+import java.security.KeyStore;
 import java.util.*;
+import java.util.function.BiConsumer;
+import java.util.stream.Collector;
 
 public class StudentManager {
-    public void printStudentList(String header, Collection<Student> collection){
+    public void printStudentList(String header, Collection<Student> collection) {
         System.out.println(header);
-        for (Student s:collection){
+        for (Student s : collection) {
             System.out.println(s);
         }
     }
-    public  void printAvgAge(String header, double avg){
-        System.out.println(header+avg);
+
+    public void printAvgAge(String header, double avg) {
+        System.out.println(header + avg);
     }
-    public  void printMap (String header, Map<Integer,Student> studentMap){
+
+    public void printMap(String header, Map<Integer, Student> studentMap) {
         System.out.println(header);
         for (Integer i : studentMap.keySet()) {
-            System.out.println("ID = "+ i + " " + "Values = "+ studentMap.get(i));
+            System.out.println("ID = " + i + " " + "Values = " + studentMap.get(i));
         }
     }
+
     public static Collection<Student> initStudentList() {
         List<Student> studentsList = new ArrayList<>();
         Student student1 = new Student(0, "Andre ", "Balaw ", 19);
@@ -46,6 +53,7 @@ public class StudentManager {
 
         return studentsList;
     }
+
     public static List<Student> getSortedStudentList(Collection<Student> students) {
         //List<Students> studentsListCopy = new ArrayList<>();
         //studentsListCopy.addAll(initStudentList()); // неочень хороший вариант
@@ -67,7 +75,6 @@ public class StudentManager {
     }
 
     public static double avgByAgeStudentsList(Collection<Student> students) {
-//        List<Student> avgStudentsListByAge = new ArrayList<>();
         double average = 0;
         int sum = 0;
         int count = 0;
@@ -77,26 +84,28 @@ public class StudentManager {
             sum += st.getAge();
         }
 //        System.out.println("Sum: "+ sum);
-        average = sum/count;
+        average = sum / count;
 //        System.out.println(average);
         return average;
     }
-    public static Map<Integer,Student> convertList (Collection<Student> students){ // неуверен верно ли получается
-        Map<Integer,Student> studentMap = new HashMap<>();
-        for (Student student : students){
+
+    public static Map<Integer, Student> convertList(Collection<Student> students) { // неуверен верно ли получается
+        Map<Integer, Student> studentMap = new HashMap<>();
+        for (Student student : students) {
             studentMap.put(student.getId(), student);
         }
         return studentMap;
     }
-//    public static Map<Integer,Student> filterMap (Map<Integer,Student> convertList){
-//        Map<Integer,Student> filter = new HashMap<>();
-//       for ( Integer integer : convertList ){
-//           if (convertList.)
-//
-//
-//           }
-//           System.out.println(filter);
-//       }
-//    }
 
+//    public static Map<Integer, Student> filterMap(Map<Integer, Student> convertList) {
+//        Map<Integer, Student> filter = new HashMap<>(convertList);
+//        Integer id = filter.hashCode();
+//        if (convertList.containsValue(5)){
+//            filter.putAll(filter);
+//        }
+////        for ( convertList: id.equals(5)) filter.putAll(filter);
+////        System.out.println(filter);
+//        return filter;
+//        }
 }
+
