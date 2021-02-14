@@ -97,15 +97,29 @@ public class StudentManager {
         return studentMap;
     }
 
-//    public static Map<Integer, Student> filterMap(Map<Integer, Student> convertList) {
-//        Map<Integer, Student> filter = new HashMap<>(convertList);
-//        Integer id = filter.hashCode();
-//        if (convertList.containsValue(5)){
-//            filter.putAll(filter);
+    public static Map<Integer, Student> filterMap (Map<Integer, Student> convertList) {
+        Map<Integer, Student> filter = new HashMap<>(convertList);
+        Set<Student> set = new HashSet<Student>();
+        Iterator<Student> it = set.iterator();
+        while (it.hasNext()) {
+            Student currentElement = it.next();
+            if (set.size() < 5) {
+                set.remove(currentElement);
+            }
+            return filter;
+        }
+        return filter;
+    }}
+//            set.remove(filter.remove(set));
+//        } return filter;
+//        for (Student student : filter.values()){
+//            if (){
+//
+//            }
 //        }
-////        for ( convertList: id.equals(5)) filter.putAll(filter);
-////        System.out.println(filter);
-//        return filter;
+//        for (Iterator iterator = filter.values().iterator();iterator.hasNext();){
+//            Object element = iterator.next();
+//            if (){
+//                iterator.remove();
+//            }
 //        }
-}
-

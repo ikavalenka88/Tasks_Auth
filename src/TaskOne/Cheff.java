@@ -7,49 +7,47 @@ import java.util.Scanner;
 public class Cheff {
     private String name;
     public Salat salat;
-    int i;
 
     public Cheff() {
         name = "Dan";
         salat = new Salat();
     }
 
-    //    public Cheff(String name){
-//        this.name=name;
-//        salat=new Salat();
-//    }
-//    public Cheff(String name,Salat salat){
-//        this.name=name;
-//        this.salat=salat;
-//    }
-    public Vegetables getCompositions(Scanner scanner) {
-        String compositionName;
-        double weight;
-        System.out.println("Select ingredient:");
-        compositionName = scanner.next();
-        System.out.println("Weight:");
+        public Cheff(String name){
+        this.name=name;
+        salat=new Salat();
+    }
+    public Cheff(String name,Salat salat){
+        this.name=name;
+        this.salat=salat;
+    }
+    public Vegetables getgetIngredient(Scanner scanner) {
+        String ingredientName;
+//        double weight;
+        System.out.println("Enter ingredient:");
+        ingredientName = scanner.next();
+//        System.out.println("Weight:");
+//        try {
+//            weight = scanner.nextDouble();
+//        } catch (InputMismatchException e) {
+//            System.out.println("Incorrect weight!");
+//            scanner.next();
+//            return null;
+//        }
         try {
-            weight = scanner.nextDouble();
-        } catch (InputMismatchException e) {
-            System.out.println("Incorrect weight!");
-            scanner.next();
-            return null;
-        }
-        try {
-
             Class[] parameters = {double.class};
-            compositionName =  compositionName;
-            Class compositionClass = Class.forName(compositionName);
+//            ingredientName =  compositionName;
+            Class compositionClass = Class.forName(ingredientName);
             Constructor constructor = compositionClass.getDeclaredConstructor(parameters);
-            Vegetables vegetables = (Vegetables) constructor.newInstance(new Object[]{weight});
+            Vegetables vegetables = (Vegetables) constructor.newInstance(new Object[]{});
             return vegetables;
         } catch (Exception e) {
             System.out.println("This ingredient is  absent!");
             return null;
         }
-    }
+   }
 
-    public void showCompositionForCalories(Scanner scanner) {
+    public void showIngredientsForCalories(Scanner scanner) {
         double lowerCalories, upperCalories;
         System.out.println("Lower limit:");
         try {
@@ -77,7 +75,7 @@ public class Cheff {
         System.out.println("Cheff: " + name);
         System.out.println("Select options:");
         while (choice != 0) {
-            System.out.println("1. Add compositions");
+            System.out.println("1. Add ingredient");
             System.out.println("2. Sort compositions by calories");
             System.out.println("3. Sort compositions by weight");
             System.out.println("4. Show salad");
@@ -91,7 +89,13 @@ public class Cheff {
             }
             switch (choice) {
                 case 1:
-//                    salat.addCompositions(); // I NEED HELP !!! I'm can't see resolve way.
+                    vegetables = getgetIngredient(scanner);
+                    if (vegetables != null){
+                        if (!salat.addIngredients(vegetables)){
+                            System.out.println("Trouble with adding ingredient");
+                        }
+                    }
+                    break;
                 case 2:
                     salat.sortComponentsByCalories();
                     break;

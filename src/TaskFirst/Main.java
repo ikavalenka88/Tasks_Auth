@@ -16,7 +16,7 @@ public class Main {
         manager.printAvgAge( "Result of Avg ", avgByAge);
         Map<Integer,Student> studentMap = StudentManager.convertList(students);
         manager.printMap("Transform into Map", studentMap);
-//        Map<Integer,Student> filterMap = StudentManager.filterMap(filter);
-//        manager.printMap("Filtered Map", filterMap);
+        Map<Integer,Student> filterMap = StudentManager.filterMap(filter);
+        manager.printMap("Filtered Map", filterMap);
     }
 }

@@ -1,8 +1,6 @@
 package TaskOne;
 
-import TaskOne.dto.Cucumber;
-import TaskOne.dto.Potato;
-import TaskOne.dto.Tomato;
+import TaskOne.dto.*;
 
 public class SalatOne extends Salat{
     public SalatOne() {
@@ -10,7 +8,8 @@ public class SalatOne extends Salat{
 
         addIngredients(new Potato());
         addIngredients(new Tomato());
-//        addIngredients(new Beta(250));
+        addIngredients(new OilOlive());
         addIngredients(new Cucumber());
+        addIngredients(new Dill());
     }
 }

@@ -9,16 +9,6 @@ public class Vegetables {
         this.name = name;
     }
 
-    public Vegetables(String name, double calories) {
-        if (calories < 0) {
-            throw new IllegalArgumentException("Cannot create vegetable with "
-                    + calories + "kcal");
-        }
-
-        this.name = name;
-        this.kcalPer100g = calories;
-        this.weight = 100;
-    }
     public Vegetables(String name, double calories, double weight) {
         if (calories < 0) {
             throw new IllegalArgumentException("Cannot create vegetable with "

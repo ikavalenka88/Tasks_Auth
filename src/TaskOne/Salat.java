@@ -9,7 +9,7 @@ public class Salat {
     private String name;
 
     public Salat() {
-        name = "SalatOne";
+        name = "NewSalat";
     }
 
     public Salat(String name) {
@@ -24,8 +24,8 @@ public class Salat {
         this.name = name;
     }
 
-    public List<Vegetables> getIngredients() {
-        return this.ingredients;
+    public List<?> getIngredients() {
+        return ingredients;
     }
 
 
