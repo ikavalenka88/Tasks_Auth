@@ -97,8 +97,14 @@ public class StudentManager {
         return studentMap;
     }
 
-    public static Map<Integer, Student> filterMap (Map<Integer, Student> convertList) {
-        Map<Integer, Student> filter = new HashMap<>(convertList);
+    public static Map<Integer,Student> filterMap (Map<Integer, Student> convertList) {
+        Map<Integer,Student> filter = new HashMap<>(convertList);
+
+        Collections.sort(filter,filter.get(filterMap()).getId()>5);
+
+
+
+        Collections.sort(filter, ); // Здесь  туплю жестко
         Set<Student> set = new HashSet<Student>();
         Iterator<Student> it = set.iterator();
         while (it.hasNext()) {
