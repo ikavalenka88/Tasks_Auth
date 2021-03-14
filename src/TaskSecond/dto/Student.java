@@ -1,7 +1,4 @@
 package TaskSecond.dto;
-
-import java.util.Map;
-
 public class Student {
     private Integer id;
     private String name;
