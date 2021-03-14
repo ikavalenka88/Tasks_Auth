@@ -1,4 +1,7 @@
-package TaskFirst;
+package TaskFirst.dto;
+
+import TaskFirst.AgeComparator;
+import TaskFirst.Student;
 
 import javax.swing.*;
 import java.security.Key;
@@ -97,35 +100,13 @@ public class StudentManager {
         return studentMap;
     }
 
-    public static Map<Integer,Student> filterMap (Map<Integer, Student> convertList) {
-        Map<Integer,Student> filter = new HashMap<>(convertList);
-
-        Collections.sort(filter,filter.get(filterMap()).getId()>5);
-
-
-
-        Collections.sort(filter, ); // Здесь  туплю жестко
-        Set<Student> set = new HashSet<Student>();
-        Iterator<Student> it = set.iterator();
-        while (it.hasNext()) {
-            Student currentElement = it.next();
-            if (set.size() < 5) {
-                set.remove(currentElement);
-            }
-            return filter;
+    public static Map<Integer,Student> filterMap (Map<Integer, Student> originalMap) {
+        Map<Integer,Student> filteredMap = new HashMap<>();
+        for (Map.Entry<Integer, Student> entry : originalMap.entrySet()){
+        if (entry.getValue().getId() >5 ){
+        filteredMap.put(entry.getValue().getId(), entry.getValue());}
         }
-        return filter;
-    }}
-//            set.remove(filter.remove(set));
-//        } return filter;
-//        for (Student student : filter.values()){
-//            if (){
-//
-//            }
-//        }
-//        for (Iterator iterator = filter.values().iterator();iterator.hasNext();){
-//            Object element = iterator.next();
-//            if (){
-//                iterator.remove();
-//            }
-//        }
+        return filteredMap;
+        }
+    }
+

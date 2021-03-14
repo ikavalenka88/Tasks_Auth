@@ -21,6 +21,7 @@ public class Student implements Comparable<Student> {
         st.append("age: ").append(age);
         st.append(".");
         return st.toString();
+//        return String.format();
     }
 
     public int compareTo(Student otherStudens) {
