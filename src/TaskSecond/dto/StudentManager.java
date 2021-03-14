@@ -26,7 +26,6 @@ public class StudentManager {
         new Student(10, "Victoria ", "Wow ", 23));
        Stream stream = initStudentList.stream();
         stream.forEach(System.out::println);
-//        initStudentList.stream().sorted((student1,student2)-> student1.getAge()- student2.getAge());
         System.out.println("-------------------------------------------------------------------");
         initStudentList.stream().sorted(Comparator.comparingInt(Student::getAge))
                                 .forEach(System.out::println);
