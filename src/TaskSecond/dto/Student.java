@@ -28,7 +28,4 @@ public class Student {
     public String toString(){
         return  String.format("ID: %s Name: %s Surname: %s Age: %s", id,name,surname,age);
     }
-
-
-
 }

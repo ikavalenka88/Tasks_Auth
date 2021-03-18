@@ -1,18 +1,12 @@
 package TaskSecond.dto;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StudentManager {
-//        Stream.Builder<Student> StudentBuilder = Stream.builder();
-//        Collection<Student> initStudentList = (Collection<Student>) StudentBuilder.add(0, "Andre ", "Balaw ", 19).build();
 
     public static void StudentListGeneration() {
         List<Student> initStudentList = List.of(
-//        List<Student> initStudentList = new ArrayList<>();
-//        Collection<Student> initStudentList = Arrays.asList();
         new Student(0, "Andre ", "Balaw ", 19),
         new Student(1, "Chris ", "Ueeel ", 19),
         new Student(2, "Eric ", "Four ", 23),
