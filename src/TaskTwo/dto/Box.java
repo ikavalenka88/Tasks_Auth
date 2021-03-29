@@ -1,4 +1,6 @@
-package TaskTwo;
+package TaskTwo.dto;
+
+import TaskTwo.Shape;
 
 import java.util.ArrayList;
 
