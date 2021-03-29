@@ -1,16 +1,22 @@
-package TaskFirst.dto;
+package TaskFirst.util;
 
-import TaskFirst.AgeComparator;
-import TaskFirst.Student;
+import TaskFirst.dto.Student;
 
-import javax.swing.*;
-import java.security.Key;
-import java.security.KeyStore;
 import java.util.*;
-import java.util.function.BiConsumer;
-import java.util.stream.Collector;
 
 public class StudentManager {
+    public static class AgeComparator implements Comparator<Student> {  //need to think and update
+        public int compare(Student s1, Student s2) {
+            if (s1.getAge() == s2.getAge()) {
+                return 0;
+            }
+            if (s1.getAge() > s2.getAge()) {
+                return 1;
+            } else {
+                return -1;
+            }
+        }
+    }
     public void printStudentList(String header, Collection<Student> collection) {
         System.out.println(header);
         for (Student s : collection) {
@@ -18,11 +24,11 @@ public class StudentManager {
         }
     }
 
-    public void printAvgAge(String header, double avg) {
+    public static void printAvgAge(String header, double avg) {
         System.out.println(header + avg);
     }
 
-    public void printMap(String header, Map<Integer, Student> studentMap) {
+    public static void printMap(String header, Map<Integer, Student> studentMap) {      //updated static for all method
         System.out.println(header);
         for (Integer i : studentMap.keySet()) {
             System.out.println("ID = " + i + " " + "Values = " + studentMap.get(i));
@@ -79,8 +85,8 @@ public class StudentManager {
 
     public static double avgByAgeStudentsList(Collection<Student> students) {
         double average = 0;
-        int sum = 0;
-        int count = 0;
+        double sum = 0;
+        double count = 0;
         count = students.size();
 //        System.out.println("Count: " + count);
         for (Student st : students) {
@@ -92,7 +98,7 @@ public class StudentManager {
         return average;
     }
 
-    public static Map<Integer, Student> convertList(Collection<Student> students) { // неуверен верно ли получается
+    public static  Map<Integer, Student> convertList(Collection<Student> students) { // неуверен верно ли получается
         Map<Integer, Student> studentMap = new HashMap<>();
         for (Student student : students) {
             studentMap.put(student.getId(), student);
@@ -109,4 +115,5 @@ public class StudentManager {
         return filteredMap;
         }
     }
+
 

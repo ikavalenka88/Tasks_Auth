@@ -1,9 +1,9 @@
 package TaskSecond.dto;
 public class Student {
-    private Integer id;
+    private int id;
     private String name;
     private String surname;
-    private Integer age;
+    private int age;
 
     public Student (int id, String name, String surname, int age){
         this.id=id;

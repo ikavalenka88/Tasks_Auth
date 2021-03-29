@@ -1,4 +1,6 @@
-package TaskFirst;
+package TaskFirst.dto;
+
+import java.util.Comparator;
 
 public class Student implements Comparable<Student> {
     private int id;
@@ -14,13 +16,12 @@ public class Student implements Comparable<Student> {
     }
 
     public String toString() {
-        final StringBuffer st = new StringBuffer("Student: ");
-        st.append("id: ").append(id);
-        st.append(" name: ").append(name);
-        st.append("surname: ").append(surname);
-        st.append("age: ").append(age);
-        st.append(".");
-        return st.toString();
+        String st = "Student: " + "id: " + id + //updated format
+                " name: " + name +
+                "surname: " + surname +
+                "age: " + age +
+                ".";
+        return st;
 //        return String.format();
     }
 
@@ -65,5 +66,5 @@ public class Student implements Comparable<Student> {
     public void setAge(int age) {
         this.age = age;
     }
-}
+    }
 
