@@ -5,18 +5,32 @@ import TaskFirst.dto.Student;
 import java.util.*;
 
 public class StudentManager {
-    public static class AgeComparator implements Comparator<Student> {  //need to think and update
-        public int compare(Student s1, Student s2) {
-            if (s1.getAge() == s2.getAge()) {
-                return 0;
-            }
-            if (s1.getAge() > s2.getAge()) {
-                return 1;
-            } else {
-                return -1;
-            }
-        }
-    }
+
+//    Comparator<Student> compare = new Comparator<Student>() {
+//        @Override
+//        public int compare(Student s1, Student s2) {
+//            if (s1.getAge() == s2.getAge()) {
+//                return 0;
+//            }
+//            if (s1.getAge() > s2.getAge()) {
+//                return 1;
+//            } else {
+//                return -1;
+//            }
+//        }
+//    };
+//    public static class AgeComparator implements Comparator<Student> {  //need to think and update
+//        public int compare(Student s1, Student s2) {
+//            if (s1.getAge() == s2.getAge()) {
+//                return 0;
+//            }
+//            if (s1.getAge() > s2.getAge()) {
+//                return 1;
+//            } else {
+//                return -1;
+//            }
+//        }
+//    }
     public void printStudentList(String header, Collection<Student> collection) {
         System.out.println(header);
         for (Student s : collection) {
@@ -66,9 +80,23 @@ public class StudentManager {
     public static List<Student> getSortedStudentList(Collection<Student> students) {
         //List<Students> studentsListCopy = new ArrayList<>();
         //studentsListCopy.addAll(initStudentList()); // неочень хороший вариант
-        AgeComparator myAgeComparator = new AgeComparator();
+
+//        AgeComparator myAgeComparator = new AgeComparator();
+        Comparator<Student> compare = new Comparator<Student>() { // need clarification
+            @Override
+            public int compare(Student s1, Student s2) {
+                if (s1.getAge() == s2.getAge()) {
+                    return 0;
+                }
+                if (s1.getAge() > s2.getAge()) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
+        };
         List<Student> studentsList = new ArrayList<>(students);
-        studentsList.sort(myAgeComparator);
+        studentsList.sort(compare);
         return studentsList;
     }
 
