@@ -1,8 +1,8 @@
 package TaskOne.dto;
 
-import TaskOne.VegetablesCategories;
+import TaskOne.VegetableCategories;
 
-public class Dill extends VegetablesCategories {
+public class Dill extends VegetableCategories {
     public Dill(){
         super("Dill",53,40);
     }

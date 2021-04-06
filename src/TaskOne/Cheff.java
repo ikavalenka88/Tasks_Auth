@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Cheff {
-    private String name;
+    public String name;
     public Salat salat;
 
     public Cheff() {
@@ -21,7 +21,7 @@ public class Cheff {
         this.name=name;
         this.salat=salat;
     }
-    public Vegetables getgetIngredient(Scanner scanner) {
+    public Vegetable getIngredient(Scanner scanner) {
         String ingredientName;
 //        double weight;
         System.out.println("Enter ingredient:");
@@ -36,11 +36,11 @@ public class Cheff {
 //        }
         try {
             Class[] parameters = {double.class};
-//            ingredientName =  compositionName;
+            ingredientName = ingredientName;// here some trouble. Need fix  and refactor
             Class compositionClass = Class.forName(ingredientName);
             Constructor constructor = compositionClass.getDeclaredConstructor(parameters);
-            Vegetables vegetables = (Vegetables) constructor.newInstance(new Object[]{});
-            return vegetables;
+            Vegetable vegetable = (Vegetable) constructor.newInstance(new Object[]{});
+            return vegetable;
         } catch (Exception e) {
             System.out.println("This ingredient is  absent!");
             return null;
@@ -71,14 +71,15 @@ public class Cheff {
     public void showOptions() {
         Scanner scanner = new Scanner(System.in);
         int choice = -1;
-        Vegetables vegetables = null;
-        System.out.println("Cheff: " + name);
+        Vegetable vegetable = null;
+        System.out.println("The Chef: " + name);
         System.out.println("Select options:");
         while (choice != 0) {
             System.out.println("1. Add ingredient");
             System.out.println("2. Sort compositions by calories");
             System.out.println("3. Sort compositions by weight");
             System.out.println("4. Show salad");
+            System.out.println("5. Show ingredients for calories");
             System.out.println("0. Complete");
             try {
                 choice = scanner.nextInt();
@@ -89,9 +90,9 @@ public class Cheff {
             }
             switch (choice) {
                 case 1:
-                    vegetables = getgetIngredient(scanner);
-                    if (vegetables != null){
-                        if (!salat.addIngredients(vegetables)){
+                    vegetable = getIngredient(scanner);
+                    if (vegetable!= null){
+                        if (!salat.addIngredients(vegetable)){
                             System.out.println("Trouble with adding ingredient");
                         }
                     }
@@ -106,6 +107,9 @@ public class Cheff {
                     salat.showSalat();
                 case 0:
                     System.exit(0);
+                    break;
+                case 5:
+                    showIngredientsForCalories(scanner);
                     break;
                 default:
                     break;
