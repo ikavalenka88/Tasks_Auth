@@ -23,26 +23,26 @@ public class Cheff {
     }
     public Vegetable getIngredient(Scanner scanner) {
         String ingredientName;
-//        double weight;
+        double weight;
         System.out.println("Enter ingredient:");
         ingredientName = scanner.next();
-//        System.out.println("Weight:");
-//        try {
-//            weight = scanner.nextDouble();
-//        } catch (InputMismatchException e) {
-//            System.out.println("Incorrect weight!");
-//            scanner.next();
-//            return null;
-//        }
+        System.out.println("Input the Weight(gramms):");
+        try {
+            weight = scanner.nextDouble();
+        } catch (InputMismatchException e) {
+            System.out.println("Incorrect weight!");
+            scanner.next();
+            return null;
+        }
         try {
             Class[] parameters = {double.class};
-            ingredientName = ingredientName;// here some trouble. Need fix  and refactor
+            ingredientName = "TaskOne." + ingredientName;// here some trouble. Need fix  and refactor
             Class compositionClass = Class.forName(ingredientName);
             Constructor constructor = compositionClass.getDeclaredConstructor(parameters);
-            Vegetable vegetable = (Vegetable) constructor.newInstance(new Object[]{});
+            Vegetable vegetable = (Vegetable) constructor.newInstance(new Object[]{weight});
             return vegetable;
         } catch (Exception e) {
-            System.out.println("This ingredient is  absent!");
+            System.out.println("This ingredient is absent!");
             return null;
         }
    }
@@ -73,17 +73,20 @@ public class Cheff {
         int choice = -1;
         Vegetable vegetable = null;
         System.out.println("The Chef: " + name);
-        System.out.println("Select options:");
         while (choice != 0) {
+            System.out.println("Select options please:");
             System.out.println("1. Add ingredient");
             System.out.println("2. Sort compositions by calories");
             System.out.println("3. Sort compositions by weight");
             System.out.println("4. Show salad");
             System.out.println("5. Show ingredients for calories");
+            System.out.println("6. Name for Salad ");
             System.out.println("0. Complete");
+
             try {
                 choice = scanner.nextInt();
-            } catch (InputMismatchException e) {
+            }
+            catch (InputMismatchException e) {
                 System.out.println("Wrong option!");
                 scanner.next();
                 choice = -1;
@@ -92,7 +95,7 @@ public class Cheff {
                 case 1:
                     vegetable = getIngredient(scanner);
                     if (vegetable!= null){
-                        if (!salat.addIngredients(vegetable)){
+                        if (!salat.addIngredient(vegetable)){
                             System.out.println("Trouble with adding ingredient");
                         }
                     }
@@ -105,11 +108,15 @@ public class Cheff {
                     break;
                 case 4:
                     salat.showSalat();
-                case 0:
-                    System.exit(0);
-                    break;
                 case 5:
                     showIngredientsForCalories(scanner);
+                    break;
+                case 6:
+                    System.out.println("Enter name foe salad: ");
+                    salat.setName(scanner.next());
+                    break;
+                case 0:
+                    System.exit(0);
                     break;
                 default:
                     break;

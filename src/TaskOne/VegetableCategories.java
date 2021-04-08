@@ -5,4 +5,8 @@ public class VegetableCategories extends Vegetable {
         super(name, calories, weight);
         setCategory("First category");
     }
+    public VegetableCategories(String name,double calories){
+        super(name,calories);
+        setCategory("Fisrt category");
+    }
 }

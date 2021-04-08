@@ -1,12 +1,19 @@
 package TaskOne;
 
-public class Vegetable {
+abstract public class Vegetable {
     private String name;
     private String category;
     private double kcalPer100g;
     private double weight;
-    public Vegetable(String name) {
-        this.name = name;
+    public Vegetable(String name){this.name=name;}
+
+    public Vegetable(String name, double calories) {
+        if (calories <=0){
+            throw new IllegalArgumentException("Invalid value of calories" +calories+"Please set correct value");
+        }
+        this.name=name;
+        this.kcalPer100g=calories;
+        this.weight=100;
     }
 
     public Vegetable(String name, double calories, double weight) {

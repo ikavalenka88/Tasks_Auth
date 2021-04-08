@@ -8,8 +8,9 @@ public class Salat {
     private List<Vegetable> ingredients = new ArrayList<Vegetable>();
     private String name;
 
+
     public Salat() {
-        name = "New Salat";
+        name = "New Salad";
     }
 
     public Salat(String name) {
@@ -24,12 +25,10 @@ public class Salat {
         this.name = name;
     }
 
-//    public List<?> getIngredients() {
-//        return ingredients;
-//    }
-
-
-    public boolean addIngredients(Vegetable vegetable) {
+    public List<?> getIngredients() {
+        return ingredients;
+    }
+    public boolean addIngredient(Vegetable vegetable) {
         return ingredients.add(vegetable);
     }
 
@@ -38,7 +37,7 @@ public class Salat {
             System.out.println("Please add some ingredients for the salad!");
             return;
         }
-        System.out.println("The Salat " + name + "ingredients:");
+        System.out.println("The Salad " + name + "ingredients:");
         for (Vegetable vegetable : ingredients) {
             System.out.println(vegetable.toString());
         }
