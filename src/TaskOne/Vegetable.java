@@ -36,6 +36,7 @@ package TaskOne;
         String stringBuilder = "Ingredients:" + "Name: " + name +
                 " Category: " + category +
                 " Weight: " + weight +
+                " Calories " + kcalPer100g +
                 " !";
         return stringBuilder;
     }

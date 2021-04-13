@@ -57,7 +57,7 @@ public class Salat {
     }
 
     public void sortComponentsByWeight() {
-        Collections.sort(ingredients, new WeightComparator());
+        ingredients.sort(new WeightComparator());
     }
 
     public void showIngredientsByCalories(double lowerCalories, double upperCalories) {
