@@ -1,6 +1,6 @@
 package TaskOne;
 
-abstract public class Vegetable {
+ public class Vegetable {
     private String name;
     private String category;
     private double kcalPer100g;

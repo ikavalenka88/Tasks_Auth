@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Salat {
-    private List<Vegetable> ingredients = new ArrayList<Vegetable>();
+    public List<Vegetable> ingredients = new ArrayList<Vegetable>();
     private String name;
 
 
@@ -25,7 +25,7 @@ public class Salat {
         this.name = name;
     }
 
-    public List<?> getIngredients() {
+    public List<Vegetable> getIngredients() {
         return ingredients;
     }
     public boolean addIngredient(Vegetable vegetable) {
@@ -37,7 +37,7 @@ public class Salat {
             System.out.println("Please add some ingredients for the salad!");
             return;
         }
-        System.out.println("The Salad " + name + "ingredients:");
+        System.out.println("The Salad " + name + " ingredients:");
         for (Vegetable vegetable : ingredients) {
             System.out.println(vegetable.toString());
         }
@@ -53,7 +53,7 @@ public class Salat {
     }
 
     public void sortComponentsByCalories() {
-        Collections.sort(ingredients, new CaloriesComparator());
+        ingredients.sort(new CaloriesComparator());
     }
 
     public void sortComponentsByWeight() {
