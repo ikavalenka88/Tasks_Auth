@@ -132,21 +132,36 @@ public class CollectionComparator {
         System.out.println("The time spend for remove in the end " +spendSix);
     }
     public static void findElement(){
+        int searchNumber = ((int)Math.random()*100);
         List<Integer> arrayList = initArrayList();
         List<Integer> linkedList = iniLinkedList();
+        List<Integer> searchNumberList;
         List<Integer> listTwo = new ArrayList<Integer>();
-        for (int i = 0; i <= VALUE; i++) {
-            listTwo.add((int) (Math.random() * 100));
-        }
-        arrayList.addAll(listTwo);
+        long startOne=System.nanoTime();
+        System.out.println("Element present in collection: " + Collections.frequency(arrayList, searchNumber));
+        long finishOne = System.nanoTime();
+        long spendOne = finishOne-startOne;
+        System.out.println("Time for search elements: "+spendOne);
+
+        long startTwo=System.nanoTime();
+        System.out.println("Element present in collection: " + Collections.frequency(linkedList, searchNumber));
+        long finishTwo = System.nanoTime();
+        long spendTwo = finishTwo-startTwo;
+        System.out.println("Time for search elements: "+spendTwo);
+//        for (int i = 0; i <= arrayList.size(); i++) {
+//            for (List<Integer> entry : )
+//            arrayList.get(searchNumber);
+//
+//        }
+//        arrayList.addAll(listTwo);
 //        List<Integer> streamList;
 //        long startOne=System.nanoTime();
 //        arrayList.subList(0,VALUE);
-        List<Integer> collect = arrayList.stream()
-                .filter(listTwo::contains)  // need clarify
-                .collect(Collectors.toList());
-        System.out.println(collect.size());
-        System.out.println(arrayList.size());
+//        List<Integer> collect = arrayList.stream()
+//                .filter(listTwo::contains)  // need clarify
+//                .collect(Collectors.toList());
+//        System.out.println(collect.size());
+//        System.out.println(arrayList.size());
 //        for (int i =0;i<=VALUE;i++){
 //            arrayList.get(i);
 //            System.out.printf(" %d ",arrayList.get(i));
