@@ -6,6 +6,6 @@ public class Main {
 //        CollectionComparator.iniLinkedList();
 //       CollectionComparator.compareAddToCollection();
 //       CollectionComparator.deleteElement();
-        CollectionComparator.findElement();
+       CollectionComparator.findElement();
     }
 }

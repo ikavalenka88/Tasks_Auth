@@ -144,48 +144,5 @@ public class Cheff {
 //            System.out.println("Was wrong option!");
             showOptions();
         }
-//            try {                   // remove  try catch use  if
-//                choice = scanner.nextInt();
-//            }
-//            catch (InputMismatchException e) {
-//                System.out.println("Wrong option!");
-//                scanner.next();
-//                choice = -1;
-//            }
-//            switch (scanner.nextInt()) {        //instead choice
-//            case 1:
-//        }
-//                    vegetable = getIngredient(scanner);
-//                    if (vegetable!= null){
-//                        if (!salat.addIngredient(vegetable)){
-//                            System.out.println("Trouble with adding ingredient");
-//                        }
-//                    }
-//                    break;
-//                case 2:
-//                    salat.sortComponentsByCalories();
-//                    break;
-//                case 3:
-//                    salat.sortComponentsByWeight();
-//                    break;
-//                case 4:
-//                    salat.showSalat();
-//                case 5:
-//                    showIngredientsForCalories(scanner);
-//                    break;
-//                case 6:
-//                    System.out.println("Enter name foe salad: ");
-//                    salat.setName(scanner.next());
-//                    break;
-//                case 0:
-//                    System.exit(0);
-//                    break;
-//                default:
-//                    break;
-//            }
-//            scanner.close();
-//        }
-//    }
-//}
     }
 }
