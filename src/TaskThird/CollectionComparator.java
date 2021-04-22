@@ -139,7 +139,6 @@ public class CollectionComparator {
             Collections.frequency(arrayList, searchNumber);
         }
         long finishOne = System.nanoTime();
-        System.out.println("Element present in collection: ");
         System.out.println("Time for search elements: ");
         spendTime(startOne, finishOne);
         System.out.println("The LinkedList performance:");
@@ -150,7 +149,6 @@ public class CollectionComparator {
             Collections.frequency(linkedList, searchNumber);
         }
         long finishTwo = System.nanoTime();
-        System.out.println("Element present in collection: ");
         System.out.println("Time for search elements: ");
         spendTime(startTwo, finishTwo);
     }
