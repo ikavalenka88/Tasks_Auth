@@ -33,13 +33,8 @@ public class CollectionComparator {
         method.accept();
         return System.nanoTime()-startTime;
     }
-//    public static void spendTime(long start, long finish) {
-//        LongBinaryOperator spendTime = (x, y) -> y - x;
-//        System.out.println(spendTime.applyAsLong(start,finish));
-//    }
-
     public static List<Integer> initArrayList() {
-        List<Integer> arrayList = new ArrayList<>();
+       List<Integer> arrayList = new ArrayList<>();
         for (int i = 0; i <= SIZE; i++) {
             arrayList.add((int) (Math.random() * 100));
         }
