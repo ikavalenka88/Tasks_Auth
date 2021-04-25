@@ -1,24 +1,25 @@
 package TaskThird;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 public class CollectionComparator {
     private static final int SIZE=10_000_000;
     private static final int VALUE = 1_000;
 
-    public static List<Integer> add (List<Integer> list,int count){
+    public  List<Integer> add (List<Integer> list,int count){
         for (int i =0;i<count;i++){
             list.add((int)Math.random()*100);
         }
         return list;
     }
-    public static List<Integer> remove (List<Integer> list,int count){
+    public  List<Integer> remove (List<Integer> list,int count){
         for (int i =0;i<count;i++){
             list.remove(i);
         }
         return list;
     }
-    public static List<Integer> find(List<Integer>list,int count){
+    public  List<Integer> find(List<Integer>list,int count){
         for (int i =0;i<count;i++){
             Collections.frequency(list, count);
         }
@@ -26,9 +27,9 @@ public class CollectionComparator {
     }
     public static void printResult (long arrayListResult, long linkedListResult){
         System.out.println("The ArrayList: "+ arrayListResult);
-        System.out.println("The LinkedList: "+linkedListResult);
+        System.out.println("The LinkedList: "+ linkedListResult);
     }
-    public static long getTime(int Consumer ){ //use interface consumer<T>
+    public static long getTime(Consumer<CollectionComparator> method){ //use interface consumer<T>
         long startTime =System.nanoTime();
         method.accept();
         return System.nanoTime()-startTime;
