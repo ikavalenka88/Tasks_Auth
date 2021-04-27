@@ -1,41 +1,53 @@
 package TaskThird;
 
 import java.util.*;
-import java.util.function.Consumer;
+import java.util.function.BiConsumer;
 
 public class CollectionComparator {
-    private static final int SIZE=10_000_000;
+    private static final int SIZE = 10_000_000;
     private static final int VALUE = 1_000;
 
-    public  List<Integer> add (List<Integer> list,int count){
-        for (int i =0;i<count;i++){
-            list.add((int)Math.random()*100);
+//    public  List<Integer> add (List<Integer> list,int count){
+//        for (int i =0;i<count;i++){
+//            list.add((int)Math.random()*100);
+//        }
+//        return list;
+//    }
+
+    public static void add(List<Integer> list, int count) {
+        for (int i = 0; i < count; i++) {
+            list.add((int) Math.random() * 100);
         }
-        return list;
+
     }
-    public  List<Integer> remove (List<Integer> list,int count){
-        for (int i =0;i<count;i++){
+
+    public static  void remove(List<Integer> list, int count) {
+        for (int i = 0; i < count; i++) {
             list.remove(i);
         }
-        return list;
     }
-    public  List<Integer> find(List<Integer>list,int count){
-        for (int i =0;i<count;i++){
+
+    public static void find(List<Integer> list, int count) {
+        for (int i = 0; i < count; i++) {
             Collections.frequency(list, count);
         }
-        return list;
     }
-    public static void printResult (long arrayListResult, long linkedListResult){
-        System.out.println("The ArrayList: "+ arrayListResult);
-        System.out.println("The LinkedList: "+ linkedListResult);
+
+    public static void printResult(long arrayListResult, long linkedListResult) {
+        System.out.println("The ArrayList: " + arrayListResult);
+        System.out.println("The LinkedList: " + linkedListResult);
     }
-    public static long getTime(Consumer<CollectionComparator> method){ //use interface consumer<T>
-        long startTime =System.nanoTime();
-        method.accept();
-        return System.nanoTime()-startTime;
+
+    public static long getTime(BiConsumer<List<Integer>, Integer> method,
+                               List<Integer> list,
+                                int count) { //use interface consumer<T>
+        long startTime = System.nanoTime();
+        method.accept(list, count);
+        return System.nanoTime() - startTime;
     }
+
     public static List<Integer> initArrayList() {
-       List<Integer> arrayList = new ArrayList<>();
+        List<Integer> arrayList = new ArrayList<>();
         for (int i = 0; i <= SIZE; i++) {
             arrayList.add((int) (Math.random() * 100));
         }
@@ -102,7 +114,7 @@ public class CollectionComparator {
 //        long finishSix = System.nanoTime();
 //        System.out.println("The time spend for add at the beginning ");
 //        spendTime(startSix, finishSix);
-    }
+}
 //    public static void deleteElement(){
 //        List<Integer> arrayList = initArrayList();
 //        List<Integer> linkedList = iniLinkedList();
@@ -171,4 +183,4 @@ public class CollectionComparator {
 //        System.out.println("Time for search elements: ");
 //        spendTime(startTwo, finishTwo);
 //    }
-}
+
