@@ -1,4 +1,4 @@
-package TaskThird;
+package TaskThird.util;
 
 import java.util.*;
 import java.util.function.BiConsumer;

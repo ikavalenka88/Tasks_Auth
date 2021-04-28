@@ -1,9 +1,11 @@
 package TaskThird;
 
+import TaskThird.util.CollectionComparator;
+
 import java.util.List;
 import java.util.function.BiConsumer;
 
-import static TaskThird.CollectionComparator.*;
+import static TaskThird.util.CollectionComparator.*;
 
 public class Main {
     public static void main(String[] args) {

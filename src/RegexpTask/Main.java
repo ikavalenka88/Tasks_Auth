@@ -1,7 +1,6 @@
 package RegexpTask;
 
-import java.util.Scanner;
-import java.util.regex.Matcher;
+import RegexpTask.util.PatternForText;
 
 public class Main {
     public static void main(String args[]) {
@@ -9,6 +8,5 @@ public class Main {
         String text = "The best day in a week is Friday";
         System.out.println("The results: " );
         PatternForText.validate(text);
-
     }
 }
