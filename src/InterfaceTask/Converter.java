@@ -19,7 +19,9 @@ interface Converter extends Print {
 
 //    default void printResult() {}
 
-    default void printResultDouble(double value) {}
+    default void printResultFahrenheit(double value) {}
+    default void printResultKelvin(double value) {}
+    default void printResultReaumur(double value) {}
 
 //    default void printResultInt(int value) {}
 }

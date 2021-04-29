@@ -9,17 +9,17 @@ public class BaseConverter implements Converter {
     @Override
     public void dergreeFahrenheit(double value) {
         value = value*1.8+32;
-        printResultDouble(value);
+        printResultFahrenheit(value);
     }
     @Override
     public void  dergreeKelvin(double value){
         value += 273.15;
-        printResultDouble( value);
+        printResultKelvin( value);
     }
     @Override
     public void dergreeReaumur(double value) {
         value+=218.52;
-        printResultDouble(value);
+        printResultReaumur(value);
     }
 
 //    @Override
@@ -28,14 +28,16 @@ public class BaseConverter implements Converter {
 //    }
 
     @Override
-    public void printResultDouble(double value) {
-        System.out.println("The value of Degree: " + value);
+    public void printResultFahrenheit(double value) {
+        System.out.println("The value of Degree: " + value + " Fahrenheit");
     }
 
     @Override
-    public void printResultDouble() {
-        int value = degreeCelsius();
-        System.out.println("The value of Degree: " + value);
-
+    public void printResultKelvin(double value) {
+        System.out.println("The value of Degree: " + value + " Kelvin");
+    }
+    @Override
+    public void printResultReaumur(double value) {
+        System.out.println("The value of Degree: " + value + " Reaumur");
     }
 }
