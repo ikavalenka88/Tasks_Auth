@@ -17,8 +17,4 @@ public class Main {
         objTwo.print(convertedValueTwo);
         objThree.print(convertedValueThree);
     }
-//    public static int degreeCelsius () {
-//        int degree = (int)(Math.random() * (40 + 1)) - 20;
-//        return degree;
-//    }
 }
