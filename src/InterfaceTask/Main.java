@@ -4,14 +4,21 @@ import static InterfaceTask.BaseConverter.*;
 
 public class Main {
     public static void main(String[] args) {
-        BaseConverter objOne =new BaseConverter();
+        BaseConverter objOne = new KelvinConverter();
+        BaseConverter objTwo = new FahrenheitConverter();
+        BaseConverter objThree = new ReaumurConverter();
         int value = degreeCelsius();
-        System.out.println("The value of Degree:"+ value + " Celsius");
-        objOne.dergreeFahrenheit(value);
-        objOne.dergreeKelvin(value);
-        objOne.dergreeReaumur(value);
+        System.out.println("The value of Degree: " + value + " Celsius");
 
-//        degreeCelsius();
-//        BaseConverter.printResult(degreeCelsius());
+        double convertedValueOne = objOne.convertFromCelsius(value);
+        double convertedValueTwo = objTwo.convertFromCelsius(value);
+        double convertedValueThree = objThree.convertFromCelsius(value);
+        objOne.print(convertedValueOne);
+        objTwo.print(convertedValueTwo);
+        objThree.print(convertedValueThree);
     }
+//    public static int degreeCelsius () {
+//        int degree = (int)(Math.random() * (40 + 1)) - 20;
+//        return degree;
+//    }
 }

@@ -16,7 +16,7 @@ public class Main {
         BiConsumer<List<Integer>, Integer> findIntoList = CollectionComparator::find;
         System.out.println("Add to collections");
         printResult(
-                getTime((m, t) -> CollectionComparator.add(m, t), arrayList, 1000),
+                getTime(CollectionComparator::add, arrayList, 1000),
 //                getTime(CollectionComparator::add, arrayList, 1000),
 //                getTime(addIntoList, arrayList, 1000),
                 getTime(addIntoList, linkedLis, 1000)
