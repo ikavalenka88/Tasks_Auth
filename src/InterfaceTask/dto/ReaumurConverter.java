@@ -1,6 +1,8 @@
-package InterfaceTask;
+package InterfaceTask.dto;
 
-public class ReaumurConverter extends BaseConverter{
+import InterfaceTask.util.BaseConverter;
+
+public class ReaumurConverter extends BaseConverter {
     public ReaumurConverter() {
         super(" Reaumur");
     }

@@ -5,14 +5,6 @@ import java.util.function.BiConsumer;
 
 public class CollectionComparator {
     private static final int SIZE = 10_000_000;
-    private static final int VALUE = 1_000;
-
-//    public  List<Integer> add (List<Integer> list,int count){
-//        for (int i =0;i<count;i++){
-//            list.add((int)Math.random()*100);
-//        }
-//        return list;
-//    }
 
     public static void add(List<Integer> list, int count) {
         for (int i = 0; i < count; i++) {

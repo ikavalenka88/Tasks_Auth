@@ -1,6 +1,8 @@
-package InterfaceTask;
+package InterfaceTask.dto;
 
-public class FahrenheitConverter extends BaseConverter{
+import InterfaceTask.util.BaseConverter;
+
+public class FahrenheitConverter extends BaseConverter {
 
     public FahrenheitConverter() {
         super(" Fahrenheit");

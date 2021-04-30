@@ -1,6 +1,11 @@
 package InterfaceTask;
 
-import static InterfaceTask.BaseConverter.*;
+import InterfaceTask.dto.FahrenheitConverter;
+import InterfaceTask.dto.KelvinConverter;
+import InterfaceTask.dto.ReaumurConverter;
+import InterfaceTask.util.BaseConverter;
+
+import static InterfaceTask.util.BaseConverter.*;
 
 public class Main {
     public static void main(String[] args) {

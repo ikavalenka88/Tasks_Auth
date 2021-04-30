@@ -1,4 +1,6 @@
-package InterfaceTask;
+package InterfaceTask.dto;
+
+import InterfaceTask.util.BaseConverter;
 
 public class KelvinConverter extends BaseConverter {
 

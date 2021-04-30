@@ -1,4 +1,4 @@
-package InterfaceTask;
+package InterfaceTask.util;
 
 public abstract class BaseConverter implements Converter,Print {
     String DergeeValue;
