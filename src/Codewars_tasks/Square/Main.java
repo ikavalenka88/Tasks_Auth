@@ -1,8 +1,12 @@
 package Codewars_tasks.Square;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        int n =21234;
-        System.out.println(squareNumber.square(n));
+        Scanner scanner =new Scanner(System.in);
+        System.out.println("Please,enter number: ");
+        int n = scanner.nextInt();
+        System.out.println("The result of square each digit in number: " + squareNumber.square(n));
     }
 }
