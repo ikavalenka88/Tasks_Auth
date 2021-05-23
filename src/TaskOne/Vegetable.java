@@ -1,15 +1,22 @@
 package TaskOne;
 
-public class Vegetables {
+ public class Vegetable {
     private String name;
     private String category;
     private double kcalPer100g;
     private double weight;
-    public Vegetables(String name) {
-        this.name = name;
+    public Vegetable(String name){this.name=name;}
+
+    public Vegetable(String name, double calories) {
+        if (calories <=0){
+            throw new IllegalArgumentException("Invalid value of calories" +calories+"Please set correct value");
+        }
+        this.name=name;
+        this.kcalPer100g=calories;
+        this.weight=100;
     }
 
-    public Vegetables(String name, double calories, double weight) {
+    public Vegetable(String name, double calories, double weight) {
         if (calories < 0) {
             throw new IllegalArgumentException("Cannot create vegetable with "
                     + calories + "kcal");
@@ -26,8 +33,13 @@ public class Vegetables {
     }
 
     public String toString() {
-        return (weight + " gramms of " + name + " (" + category + "), "
-                + getTotalCalories() + "kcal");
+        String stringBuilder = "Ingredients:" + "Name: " + name +
+                " Category: " + category +
+                " Weight: " + weight +
+                " Calories on 100 g" + kcalPer100g +
+//                " Calories " + kcalPer100g*weight +
+                " !";
+        return stringBuilder;
     }
 
     public String getName() {

@@ -10,7 +10,7 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         Collection<Student> student = StudentManager.StudentListGeneration();
-        StudentManager.StudentListGeneration();
+//        StudentManager.StudentListGeneration();
         StudentManager.sortByAge((List<Student>) student);
         StudentManager.filterBySurname((List<Student>) student);
         StudentManager.averageByAge((List<Student>) student);

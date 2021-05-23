@@ -5,11 +5,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class Salat {
-    private List<Vegetables> ingredients = new ArrayList<Vegetables>();
+    public List<Vegetable> ingredients = new ArrayList<Vegetable>();
     private String name;
 
+
     public Salat() {
-        name = "NewSalat";
+        name = "New Salad";
     }
 
     public Salat(String name) {
@@ -24,13 +25,11 @@ public class Salat {
         this.name = name;
     }
 
-    public List<?> getIngredients() {
+    public List<Vegetable> getIngredients() {
         return ingredients;
     }
-
-
-    public boolean addIngredients(Vegetables veg) {
-        return ingredients.add(veg);
+    public boolean addIngredient(Vegetable vegetable) {
+        return ingredients.add(vegetable);
     }
 
     public void showSalat() {
@@ -38,33 +37,33 @@ public class Salat {
             System.out.println("Please add some ingredients for the salad!");
             return;
         }
-        System.out.println("The Salat " + name + "ingredients:");
-        for (Vegetables vegetables : ingredients) {
-            System.out.println(vegetables.toString());
+        System.out.println("The Salad " + name + " ingredients:");
+        for (Vegetable vegetable : ingredients) {
+            System.out.println(vegetable.toString());
         }
         System.out.println("Total: " + countCalories());
     }
 
     public double countCalories() {
         double calories = 0.0;
-        for (Vegetables vegetables : ingredients) {
+        for (Vegetable vegetables : ingredients) {
             calories += vegetables.getTotalCalories();
         }
         return calories;
     }
 
     public void sortComponentsByCalories() {
-        Collections.sort(ingredients, new CaloriesComparator());
+        ingredients.sort(new CaloriesComparator());
     }
 
     public void sortComponentsByWeight() {
-        Collections.sort(ingredients, new WeightComparator());
+        ingredients.sort(new WeightComparator());
     }
 
     public void showIngredientsByCalories(double lowerCalories, double upperCalories) {
         double calories;
         System.out.println("Compositions for" + lowerCalories + ", " + upperCalories + ".");
-        for (Vegetables vegetables : ingredients) {
+        for (Vegetable vegetables : ingredients) {
             calories = vegetables.getCalories();
             if (calories >= lowerCalories && calories <= upperCalories) {
                 System.out.println(vegetables.getName() + ", " + vegetables.getCalories() + "on 100g");
