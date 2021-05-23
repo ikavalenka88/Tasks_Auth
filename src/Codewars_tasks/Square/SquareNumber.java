@@ -1,9 +1,8 @@
 package Codewars_tasks.Square;
 
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class squareNumber {
+public class SquareNumber {
     public static int square(int n){
         return Integer.parseInt(String.valueOf(n)
                     .chars()

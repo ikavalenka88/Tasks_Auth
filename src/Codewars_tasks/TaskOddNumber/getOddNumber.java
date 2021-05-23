@@ -1,7 +1,7 @@
 package Codewars_tasks.TaskOddNumber;
 
 public class getOddNumber {
-    static int getOdd (int arr[],int size) {
+    static int getOdd (int arr[]) {
         int i;
         for (i = 0; i<arr.length; i++){
             int count =0;
