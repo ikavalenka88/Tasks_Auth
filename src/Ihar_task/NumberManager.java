@@ -1,5 +1,5 @@
 package Ihar_task;
-
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +7,7 @@ import java.util.List;
 //
 //import java.util.Scanner;
 //
-public class NumberManager {
+
 //    public static void main(String[] args) {
 //        int f = 123;  // присваиваем число
 //        String c = String.valueOf(f); //  переводим  его в String
@@ -64,6 +64,6 @@ public class NumberManager {
 //        Integer r = new Integer(2);
 //        System.out.println(integers.contains(r));
 //    }
-}
+//}
 //в общем для Integer объектов equal метод работает по значению, то есть берет значение примитивное переменной и по нему сравнивает.
 // Единственное, что у двух объектов может быть разное - так это ссылки на объекты (это если сравнивать через ==)
