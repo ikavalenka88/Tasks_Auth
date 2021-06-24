@@ -22,6 +22,7 @@ public class CollectionComparator {
     public static void find(List<Integer> list, int count) {
         for (int i = 0; i < count; i++) {
             Collections.frequency(list, count);
+
         }
     }
 
