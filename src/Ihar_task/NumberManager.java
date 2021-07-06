@@ -94,3 +94,12 @@ public class NumberManager {
 }
 ////в общем для Integer объектов equal метод работает по значению, то есть берет значение примитивное переменной и по нему сравнивает.
 //// Единственное, что у двух объектов может быть разное - так это ссылки на объекты (это если сравнивать через ==)
+//        if (DIRECTORY.isDirectory()){
+//            for (File file: DIRECTORY.listFiles()){
+//                if (file.isDirectory()){
+//                    System.out.println("Folder: " + file.getName());
+//                }else if (file.isFile()){
+//                    System.out.println("File: " + file.getName());
+//                }
+//            }
+//        }
