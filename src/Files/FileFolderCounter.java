@@ -1,6 +1,5 @@
 package Files;
 import java.io.*;
-import java.util.Arrays;
 
 public class FileFolderCounter {
     static int counter=0;
@@ -23,19 +22,30 @@ public class FileFolderCounter {
         return arrayCounter;
     }
 
-    public static String directoryValidation (String path) throws IOException {
+    public static StringBuilder directoryValidation (String path, int level) {
         File root = new File(path);
         File[] list = root.listFiles();
+        StringBuilder result = new StringBuilder();
         if (list == null)
-            return path;
+            return null;
         for (File file : list){
             if (file.isDirectory()){
-                directoryValidation(file.getAbsolutePath());
-                System.out.println("Folder: " + file.getAbsoluteFile());
+                level++;
+                for (int i = 0; i<level; i++) {
+                    System.out.print("=");
+                }
+               System.out.println("Folder: " + file.getName());
+                result.append("Folder: " + file.getName() +"\n");
+                result.append(directoryValidation(file.getAbsolutePath(), level));
+//                directoryValidation(file.getAbsolutePath(), level);
             }else {
-                System.out.println("File: " + file.getAbsoluteFile());
+                for (int i = 0; i<level; i++) {
+                    System.out.print("-");
+                }
+                System.out.println("File: " + file.getName());
+                result.append("File: " + file.getName() + "\n");
             }
         }
-        return Arrays.toString(list);
+        return result;
     }
 }
